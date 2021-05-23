@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @AlbertEinsteinTG
+# (c) @Tamil_Tentkotta
 
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
@@ -9,14 +9,6 @@ from bot.translation import Translation # pylint: disable=import-error
 @Client.on_message(filters.command("start") & filters.private)
 async def start(bot, update):
     
-    buttons = [[
-        InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
-        InlineKeyboardButton('Source Code 🧾', url ='https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot')
-    ],[
-        InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
-    ],[
-        InlineKeyboardButton('Help ⚙', callback_data="help")
-    ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
@@ -32,9 +24,7 @@ async def start(bot, update):
 @Client.on_message(filters.command("help") & filters.private)
 async def help(bot, update):
     buttons = [[
-        InlineKeyboardButton('Home ⚡', callback_data='start'),
-        InlineKeyboardButton('About 🚩', callback_data='about')
-    ],[
+        [
         InlineKeyboardButton('Close 🔐', callback_data='close')
     ]]
     
@@ -51,8 +41,7 @@ async def help(bot, update):
 @Client.on_message(filters.command("about") & filters.private)
 async def about(bot, update):
     buttons = [[
-        InlineKeyboardButton('Home ⚡', callback_data='start'),
-        InlineKeyboardButton('Close 🔐', callback_data='close')
+          InlineKeyboardButton('Close 🔐', callback_data='close')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await bot.send_message(
