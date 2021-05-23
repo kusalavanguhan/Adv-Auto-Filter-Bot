@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @AlbertEinsteinTG
+# (c) @Tamil_Tentkotta
 
 import re
 import time
@@ -352,15 +352,7 @@ async def cb_handler(bot, query:CallbackQuery, group=1):
     cb_data = query.data
     
     if cb_data == "start":
-        buttons = [[
-            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
-            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot')
-        ],[
-            InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
-        ],[
-            InlineKeyboardButton('Help ⚙', callback_data="help")
-        ]]
-    
+        
         reply_markup = InlineKeyboardMarkup(buttons)
         
         await query.message.edit_text(
@@ -372,9 +364,7 @@ async def cb_handler(bot, query:CallbackQuery, group=1):
     
     elif cb_data == "help":
         buttons = [[
-            InlineKeyboardButton('Home ⚡', callback_data='start'),
-            InlineKeyboardButton('About 🚩', callback_data='about')
-        ],[
+            [
             InlineKeyboardButton('Close 🔐', callback_data='close')
         ]]
     
@@ -389,7 +379,7 @@ async def cb_handler(bot, query:CallbackQuery, group=1):
     
     elif cb_data == "about": 
         buttons = [[
-            InlineKeyboardButton('Home ⚡', callback_data='start'),
+           
             InlineKeyboardButton('Close 🔐', callback_data='close')
         ]]
         
